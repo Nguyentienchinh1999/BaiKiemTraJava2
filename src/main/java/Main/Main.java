@@ -115,13 +115,17 @@ public class Main {
         List<Students> sortStudent = new ArrayList<>();
         sortStudent = studentsDAO.getAll();
         Collections.sort(sortStudent);
-        sortStudent.stream().forEach(System.out::println);
+        sortStudent.stream().forEach(students -> {
+            System.out.println("ID: " + students.getId() + "--- Name: "  +students.getFull_name() + " ----- GPA = " + students.getGpa());
+        });
     }
 
     private static void option7(){
         studentsList = studentsDAO.getAll();
         studentsList.stream().filter(students -> students.getGender() == 0 && students.getAddress().toLowerCase().equalsIgnoreCase("hà nội") && students.getGpa() > 2.5)
-                .forEach(System.out::println);
+                .forEach(students -> {
+                    System.out.println("ID: " + students.getId() + "--- Name: "  +students.getFull_name() + " ----- GPA = " + students.getGpa() + "---- Gender: " + students.getGender() + "----- Address: " + students.getAddress());
+                });
     }
 
     private static void option8(){
