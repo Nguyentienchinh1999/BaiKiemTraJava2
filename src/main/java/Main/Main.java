@@ -115,7 +115,7 @@ public class Main {
         List<Students> sortStudent = new ArrayList<>();
         sortStudent = studentsDAO.getAll();
         Collections.sort(sortStudent);
-        System.out.println(sortStudent.toString());
+        sortStudent.stream().forEach(System.out::println);
     }
 
     private static void option7(){
